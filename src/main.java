@@ -16,6 +16,7 @@ public class main {
     public static void main(String[] args) {
         // TODO code application logic here
         System.out.println("HI, My name is Ghada Khalid");
+        System.out.println("HI, My name is Hadeel Alweldi");
     }
     
 }
