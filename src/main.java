@@ -17,6 +17,7 @@ public class main {
         // TODO code application logic here
         System.out.println("HI, My name is Ghada Khalid");
         System.out.println("HI, My name is Hadeel Alweldi");
+        System.out.println("HI, My name is bayan alharbi");
         System.out.println("HI, My name is Maha Almalki");
         System.out.println("السلام عليكم ,, هالة حمدي");
         
