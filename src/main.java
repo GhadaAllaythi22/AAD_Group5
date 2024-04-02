@@ -20,7 +20,10 @@ public class main {
         System.out.println("HI, My name is bayan alharbi");
         System.out.println("HI, My name is Maha Almalki");
         System.out.println("السلام عليكم ,, هالة حمدي");
-        
+
+    
+    
+    
     }
     
 }
