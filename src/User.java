@@ -8,18 +8,24 @@
  *
  * @author gkmis
  */
+//import
+import java.util.*;
+
 public class User {
-       public String fname;
+    
+    public String fname;
     public String lname;
+    public String gender;
     public String ID;
     public String password;
     public String location;
     public String phoneNumber;
     public String email;
     
-    public User(String fname, String lname, String ID, String password, String location, String phoneNumber, String email) {
+    public User(String fname, String lname, String gender, String ID, String password, String location, String phoneNumber, String email) {
         this.fname = fname;
         this.lname = lname;
+        this.gender = gender;
         this.ID = ID;
         this.password = password;
         this.location = location;
@@ -34,6 +40,10 @@ public class User {
     public void setName(String fname, String lname) {
         this.fname = fname;
         this.lname = lname;
+    }
+    
+    public void setGender(String gender) {
+        this.gender = gender;
     }
 
     public String getName() {
@@ -58,6 +68,10 @@ public class User {
 
     public String getID() {
         return ID;
+    }
+    
+    public String getGender() {
+        return gender;
     }
 
     public String getPassword() {
