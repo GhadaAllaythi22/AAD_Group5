@@ -1,18 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-/**
- *
- * @author gkmis
- */
+
 //import
 import java.util.*;
 
 public class main {
     static Scanner scanner=new Scanner (System.in);
-    static ArrayList<User>Users=new ArrayList<>();
+    public static ArrayList<User>Users=new ArrayList<>();
     /**
      * @param args the command line arguments
      */
@@ -23,6 +15,8 @@ public class main {
         System.out.println("HI, My name is bayan alharbi");
         System.out.println("HI, My name is Maha Almalki");
         System.out.println("السلام عليكم ,, هالة حمدي");
+        
+        
         System.out.println(Users);
         // ArrayList<User>Users=new ArrayList<>();
           String choice = null;
@@ -56,6 +50,7 @@ public class main {
         for (User user : Users) {
             if (user.ID .equals(id) && user.password.equals(password)) {
                 System.out.println("Login successful! Welcome " + user.fname + " " + user.lname);
+                volunteeringRequest(); // Call the volunteering request method
                 return;
             }
         }
@@ -63,6 +58,27 @@ public class main {
         System.out.println("Invalid ID or Password. Please try again.and if you don’t have account please sign up");
     }
     
+    public static void volunteeringRequest() {
+    scanner = new Scanner(System.in);
+    System.out.print("Do you want to make a volunteering request? (Yes/No): ");
+    String choice = scanner.next();
+
+    if (choice.equalsIgnoreCase("Yes")) {
+        System.out.print("Enter the type of volunteering: ");
+        String type = scanner.next();
+
+        System.out.print("Enter the work hours: ");
+        int workhours = scanner.nextInt();
+
+        System.out.print("Enter the date: ");
+        String date = scanner.next();
+
+        // اذا حط بيانات التطوع يقول انو ايوا خلاص نجح ادخال البيانات
+        System.out.println("Volunteering request submitted successfully!");
+    } else { // if he\she said No 
+        return; // Exit the method
+    }
+}
     
     public static void signUp() {
          scanner = new Scanner(System.in);
@@ -97,6 +113,12 @@ public class main {
 
          System.out.println("User added successfully!");
 }
+ 
+ 
+ 
+//    public void NewVolunteerrequest (ArrayList<Volunteer>volunteers,User User, String typeofvolunteer,String date,int NumWork) {
+//        volunteers.add(User, typeofvolunteer, date, NumWork);
 
-    
+//        System.out.println("Volunteer added successfully!");
+        
 }
