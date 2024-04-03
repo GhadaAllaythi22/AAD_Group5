@@ -5,6 +5,7 @@ import java.util.*;
 public class main {
     static Scanner scanner=new Scanner (System.in);
     public static ArrayList<User>Users=new ArrayList<>();
+    public static ArrayList<Volunteer> volunteers = new ArrayList<>();
     /**
      * @param args the command line arguments
      */
@@ -34,6 +35,7 @@ public class main {
             System.out.println("please try again");
         }while(!choice.equalsIgnoreCase("E"));
         System.out.println("");
+     System.out.println(volunteers);
     }
     
     
@@ -50,7 +52,7 @@ public class main {
         for (User user : Users) {
             if (user.ID .equals(id) && user.password.equals(password)) {
                 System.out.println("Login successful! Welcome " + user.fname + " " + user.lname);
-                volunteeringRequest(); // Call the volunteering request method
+                volunteeringRequest(id,password);
                 return;
             }
         }
@@ -58,27 +60,35 @@ public class main {
         System.out.println("Invalid ID or Password. Please try again.and if you don’t have account please sign up");
     }
     
-    public static void volunteeringRequest() {
-    scanner = new Scanner(System.in);
-    System.out.print("Do you want to make a volunteering request? (Yes/No): ");
-    String choice = scanner.next();
+    public static void volunteeringRequest(String id,String password) {
+        scanner = new Scanner(System.in);
+        System.out.print("Do you want to make a volunteering request? (Yes/No): ");
+        String choice = scanner.next();
+        if (choice.equalsIgnoreCase("Yes")){
+         System.out.print("Enter the type of volunteering: ");
+         String type = scanner.next();
 
-    if (choice.equalsIgnoreCase("Yes")) {
-        System.out.print("Enter the type of volunteering: ");
-        String type = scanner.next();
+         System.out.print("Enter the work hours: ");
+         int workhours = scanner.nextInt();
 
-        System.out.print("Enter the work hours: ");
-        int workhours = scanner.nextInt();
+         System.out.print("Enter the date: ");
+         String date = scanner.next();
 
-        System.out.print("Enter the date: ");
-        String date = scanner.next();
-
-        // اذا حط بيانات التطوع يقول انو ايوا خلاص نجح ادخال البيانات
-        System.out.println("Volunteering request submitted successfully!");
-    } else { // if he\she said No 
+         // اذا حط بيانات التطوع يقول انو ايوا خلاص نجح ادخال البيانات
+         System.out.println("Volunteering request submitted successfully!");
+        
+        for (User user : Users) {
+            if (user.ID .equals(id) && user.password.equals(password)) {
+                Volunteer volunteering = new Volunteer(user.fname,user.lname,user.gender,id,password,user.location,
+                        user.phoneNumber,user.email, type, date,workhours);
+                volunteers.add(volunteering);
+            }
+        }
+        }
+        else{
         return; // Exit the method
     }
-}
+    }
     
     public static void signUp() {
          scanner = new Scanner(System.in);

@@ -12,7 +12,7 @@ public class Volunteer extends User {
         super(fname, lname,gender, id, password, location, phoneNumber, email);
         this.typeofvolunteer = typeofvolunteer;
         this.date = date;
-        this.workhoursnumber = workhoursnumber; 
+        this.workhoursnumber = workhoursnumber;
     }
     
     public String getTypeofvolunteer() {
