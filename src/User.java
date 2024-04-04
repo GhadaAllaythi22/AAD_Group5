@@ -1,9 +1,11 @@
-// ا
+
 //import
 import java.util.*;
 
+
 public class User {
-    
+// User-specific variables
+
     public String fname;
     public String lname;
     public String gender;
@@ -12,6 +14,11 @@ public class User {
     public String location;
     public String phoneNumber;
     public String email;
+
+    public User() {
+    }
+    
+// constructer
     
     public User(String fname, String lname, String gender, String ID, String password, String location, String phoneNumber, String email) {
         this.fname = fname;
@@ -23,22 +30,17 @@ public class User {
         this.phoneNumber = phoneNumber;
         this.email = email;
     }
-
+//      Setters
     public void setID(String ID) {
         this.ID = ID;
     }
 
-    public void setName(String fname, String lname) {
+    public void setFname(String fname) {
         this.fname = fname;
-        this.lname = lname;
-    }
-    
-    public void setGender(String gender) {
-        this.gender = gender;
     }
 
-    public String getName() {
-        return fname + lname;
+    public void setLname(String lname) {
+        this.lname = lname;
     }
 
     public void setEmail(String email) {
@@ -55,6 +57,19 @@ public class User {
 
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
+    }
+
+//  Getters  
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public String getFname() {
+        return fname;
+    }
+
+    public String getLname() {
+        return lname;
     }
 
     public String getID() {
@@ -80,5 +95,70 @@ public class User {
     public String getEmail() {
         return email;
     }
+    
+    
+    // sign up method nedded to make the new user put his\her personal info and save them in array list
+    
+     public void signUp(ArrayList<User> users) {
+        Scanner scanner = new Scanner(System.in);
+
+
+        System.out.print("Enter first name: ");
+        String fname = scanner.next();
+
+        System.out.print("Enter last name: ");
+        String lname = scanner.next();
+        
+        System.out.print("Enter gender: ");
+        String gender = scanner.next();
+
+        System.out.print("Enter ID: ");
+        String id = scanner.next();
+
+        System.out.print("Enter password: ");
+        String password = scanner.next();
+
+        System.out.print("Enter location: ");
+        String location = scanner.next();
+
+        System.out.print("Enter phone number: ");
+        String phone = scanner.next();
+
+        System.out.print("Enter email: ");
+        String email = scanner.next();
+
+        
+         User newUser= new User(fname,lname,gender,id,password,location,phone,email);
+         users.add(newUser);
+
+         System.out.println("User added successfully!");
+}
+     
+     // log in method needed to make the existing user put his\her ID&password to access the system
+     
+      public void login(ArrayList<User> users , ArrayList<Volunteer> volunteers) {
+         Scanner scanner = new Scanner(System.in);
+
+         scanner = new Scanner(System.in);
+        
+        System.out.print("Enter ID: ");
+        String id = scanner.next();
+        
+        System.out.print("Enter Password: ");
+        scanner.nextLine(); 
+        String password = scanner.next();
+        
+//        if the inputs data match with exisiting inputs the system will send a message to user with his\her name and invoke volunteer request method
+        for (User user : users) {
+            if (user.ID .equals(id) && user.password.equals(password)) {
+                System.out.println("Login successful! Welcome " + user.fname + " " + user.lname);
+                Volunteer.volunteeringRequest( volunteers, id, password);
+                return;
+            }
+        }
+//        if it is unmatch inputs the system will send a message to the user and try again
+        System.out.println("Invalid ID or Password. Please try again.and if you don’t have account please sign up");
+    }
+     
     
 }
