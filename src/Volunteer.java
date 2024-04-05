@@ -81,7 +81,15 @@ public class Volunteer extends User {
         else{
         return; // Exit the method
     }
+        
     }
-  
+       //sprit3: count Volunteer Hours Working method
+    /* public static void countVolunteerHoursWorking( ArrayList<Volunteer> volunteers){
+                for (Volunteer volunteer : main.volunteers) {
+                           volunteer.getWorkhoursnumber()
     
+    
+    }
+    
+}*/
 }
