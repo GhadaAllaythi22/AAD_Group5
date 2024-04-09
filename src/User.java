@@ -153,7 +153,7 @@ public class User {
             if (user.ID .equals(id) && user.password.equals(password)) {
                 System.out.println("Login successful! Welcome " + user.fname + " " + user.lname);
                 
-                
+                //Submenu for services provided (This modificaation was made in the Sprint3)
                 String choise; 
                 do{
                     System.out.println("choice V for volunteeringRequest or C for CountVolunteerHoursWorking or E for exit the system: ");

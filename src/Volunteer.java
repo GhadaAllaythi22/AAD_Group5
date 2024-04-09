@@ -84,9 +84,14 @@ public class Volunteer extends User {
         return; // Exit the method
     }
     }
+        //Sprint 3
+        //           --------------------implements 2st method Count Volunteer Hours Working ------------------------
+        /*Count Volunteer Hours Working method: After validating of login, the system will be asked to choose one of the services or to exit the system, when the user selecting the Count Volunteer Hours Working service 
+         the method will gather all volunteer hours work from the array list of volunteers, then match each work hours with associated ID for the volunteer, then calculate and display the total work hours for the volunteer.
+                 */
         public static void CountVolunteerHoursWorking(ArrayList<Volunteer> volunteers){
              
-            //
+            
             Scanner scanner = new Scanner(System.in);
             scanner = new Scanner(System.in);
             System.out.println("Do you want to count your hours volunteering work? (Yes/No):");
@@ -110,14 +115,14 @@ public class Volunteer extends User {
             }
             
                     
-            else {
+            else { // if he/she chooses no 
                 System.out.println("OK, see u later!");
             }
             
             
             
        
-   } 
+   } //   -------------------- End of 2st method Count Volunteer Hours Working ------------------------
   
     
 }
