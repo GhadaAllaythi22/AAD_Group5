@@ -69,27 +69,55 @@ public class Volunteer extends User {
         for (User user : main.Users) {
             if (user.getID().equals(id) && user.getPassword().equals(password)) {
                 Volunteer volunteering = new Volunteer(user.getFname(), user.getLname(), user.getGender(), id, password, user.getLocation(),
-            user.getPhoneNumber(), user.getEmail(), type, date, workhours);
+                user.getPhoneNumber(), user.getEmail(), type, date, workhours);
                 main.volunteers.add(volunteering);
+                // If the volunteering data is entered, it will say that the data is successfully submitted
+            System.out.println("Volunteering request submitted successfully!");
+            return;
             }
         }
         
-         // If the volunteering data is entered, it will say that the data is successfully submitted
-         System.out.println("Volunteering request submitted successfully!");
+         
         
         }
         else{
         return; // Exit the method
     }
-        
     }
-       //sprit3: count Volunteer Hours Working method
-    /* public static void countVolunteerHoursWorking( ArrayList<Volunteer> volunteers){
+        public static void CountVolunteerHoursWorking(ArrayList<Volunteer> volunteers){
+             
+            //
+            Scanner scanner = new Scanner(System.in);
+            scanner = new Scanner(System.in);
+            System.out.println("Do you want to count your hours volunteering work? (Yes/No):");
+            String chosice = scanner.next();
+            int CuurentHourWork=0 ; // define the hour work variable with initon vaule to increment  
+            if(chosice.equalsIgnoreCase("YES")){
+                System.out.println("Enter your ID please: ");
+                String id =scanner.next();
+                
                 for (Volunteer volunteer : main.volunteers) {
-                           volunteer.getWorkhoursnumber()
+                    if(volunteer.getID().equalsIgnoreCase(id)){
+                            CuurentHourWork += volunteer.getWorkhoursnumber(); // get the current hour work
+                            
+                    
+                    }
+                    
+                   
+                    
+        }
+                 System.out.println("Your Total Hour Work is : "+CuurentHourWork); //print it to the user. 
+            }
+            
+                    
+            else {
+                System.out.println("OK, see u later!");
+            }
+            
+            
+            
+       
+   } 
+  
     
-    
-    }
-    
-}*/
 }

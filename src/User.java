@@ -152,8 +152,32 @@ public class User {
         for (User user : users) {
             if (user.ID .equals(id) && user.password.equals(password)) {
                 System.out.println("Login successful! Welcome " + user.fname + " " + user.lname);
-                Volunteer.volunteeringRequest( volunteers, id, password);
+                
+                
+                String choise; 
+                do{
+                    System.out.println("choice V for volunteeringRequest or C for CountVolunteerHoursWorking or E for exit the system: ");
+                    choise = scanner.next(); // to enter the person choise 
+                    switch(choise.toUpperCase()){
+                        case "V":
+                            Volunteer.volunteeringRequest( volunteers, id, password);
+                            break;
+                        case "C":
+                            Volunteer.CountVolunteerHoursWorking( volunteers);
+                            break;
+                        case "E":
+                            System.out.println("Logging out, see you later!");
+                            return;
+                        default:
+                           System.out.println("Invalid choice, please try again.");
+                           break; 
+                    }
+                    }while(!choise.equalsIgnoreCase("E"));
                 return;
+                
+                
+                
+                
             }
         }
 //        if it is unmatch inputs the system will send a message to the user and try again
