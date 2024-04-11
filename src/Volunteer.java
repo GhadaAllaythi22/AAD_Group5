@@ -42,7 +42,7 @@ public class Volunteer extends User {
     }
 
    
-/*    Volunteering Request method: This method will take volunteers info from the array list and the ID and password 
+/*    sprint 2: Volunteering Request method: This method will take volunteers info from the array list and the ID and password 
                                to match them with existing user data. 
     after login the system will ask the user if he\she wants to make volunteering request if the answer was yes:
      he\she will enter 3 inputs( type of volunteering, work hours, date he\she wants) after thet the system will 
@@ -84,6 +84,8 @@ public class Volunteer extends User {
         return; // Exit the method
     }
     }
+        //   -------------------- End of 1st method volunteeringRequest  ------------------------
+        
         //Sprint 3
         //           --------------------implements 2st method Count Volunteer Hours Working ------------------------
         /*Count Volunteer Hours Working method: After validating of login, the system will be asked to choose one of the services or to exit the system, when the user selecting the Count Volunteer Hours Working service 
@@ -100,22 +102,26 @@ public class Volunteer extends User {
             if(chosice.equalsIgnoreCase("YES")){
                 System.out.println("Enter your ID please: ");
                 String id =scanner.next();
-                
-                for (Volunteer volunteer : main.volunteers) {
+                //loop and check the volunteer id to in Volunteer arrayList to get his/her total hour work.
+                for (Volunteer volunteer : main.volunteers) { 
                     if(volunteer.getID().equalsIgnoreCase(id)){
-                            CuurentHourWork += volunteer.getWorkhoursnumber(); // get the current hour work
+                            CuurentHourWork += volunteer.getWorkhoursnumber(); // get the current hour work snd then incemnt it to the var CuurentHourWork
                             
                     
+                    }
+                    else{ //if the user enterd the wrong id 
+                        System.out.println("Sorry wrong ID, Try again");
+                        return;
                     }
                     
                    
                     
         }
-                 System.out.println("Your Total Hour Work is : "+CuurentHourWork); //print it to the user. 
+                 System.out.println("Your Total Hour Work is : "+CuurentHourWork); //Display the Cuurent Hour Work for the user. 
             }
             
                     
-            else { // if he/she chooses no 
+            else { // if he/she chooses no (in case the user get here by mistake..
                 System.out.println("OK, see u later!");
             }
             
