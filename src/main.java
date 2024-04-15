@@ -4,9 +4,9 @@ import java.util.*;
 public class main {
 //   create Scanner to make users can enter their inputs 
     static Scanner scanner = new Scanner (System.in);
-//      create array list for new users and volunteers 
-    public static ArrayList<User> Users =new ArrayList<>();
-    public static ArrayList<Volunteer> volunteers = new ArrayList<>();
+//  create array list for new users and volunteers 
+     static ArrayList<User> Users =new ArrayList<>();
+     static ArrayList<Volunteer> volunteers = new ArrayList<>();
     
     public static void main(String[] args) {
         // TODO code application logic here
