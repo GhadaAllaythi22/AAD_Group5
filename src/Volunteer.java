@@ -6,13 +6,16 @@ public class Volunteer extends User {
      private String typeofvolunteer;
      private String date;
      private int workhoursnumber;
+    private String city;
+
 
         // Constructor from User class inheriited and volunteer variables 
-    public Volunteer(String fname, String lname,String gender, String id, String password, String location, String phoneNumber, String email, String typeofvolunteer, String date, int workhoursnumber) {
+    public Volunteer(String fname, String lname,String gender, String id, String password, String location, String phoneNumber, String email, String typeofvolunteer, String date, int workhoursnumber, String City) {
         super(fname, lname,gender, id, password, location, phoneNumber, email);
         this.typeofvolunteer = typeofvolunteer;
         this.date = date;
         this.workhoursnumber = workhoursnumber;
+        this.city = City;
     }
 //    Setters
     
@@ -41,6 +44,10 @@ public class Volunteer extends User {
         return workhoursnumber;
     }
 
+    public String getCity() {
+        return city;
+    }
+
    
 /*    sprint 2: Volunteering Request method: This method will take volunteers info from the array list and the ID and password 
                                to match them with existing user data. 
@@ -64,12 +71,15 @@ public class Volunteer extends User {
 
          System.out.print("Enter the date: ");
          String date = scanner.next();
+         
+         System.out.print("select the city: Jeddah, Mecca, Yanbu, Hail, Dammam, Riyadh");
+         String city = scanner.next();
 
          
         for (User user : main.Users) {
             if (user.getID().equals(id) && user.getPassword().equals(password)) {
                 Volunteer volunteering = new Volunteer(user.getFname(), user.getLname(), user.getGender(), id, password, user.getLocation(),
-                user.getPhoneNumber(), user.getEmail(), type, date, workhours);
+                user.getPhoneNumber(), user.getEmail(), type, date, workhours, city);
                 main.volunteers.add(volunteering);
                 // If the volunteering data is entered, it will say that the data is successfully submitted
             System.out.println("Volunteering request submitted successfully!");
@@ -112,10 +122,7 @@ public class Volunteer extends User {
                     else{ //if the user enterd the wrong id 
                         System.out.println("Sorry wrong ID, Try again");
                         return;
-                    }
-                    
-                   
-                    
+                    }      
         }
                  System.out.println("Your Total Hour Work is : "+CuurentHourWork); //Display the Cuurent Hour Work for the user. 
             }

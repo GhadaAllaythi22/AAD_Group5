@@ -63,7 +63,7 @@ public class Manger extends User {
     }
 
     
-    public void viewStatistics(ArrayList<Volunteer> volunteers) {
+    public static void viewStatistics(ArrayList<Volunteer> volunteers) {
         
         Scanner scanner = new Scanner (System.in);
         
@@ -72,22 +72,41 @@ public class Manger extends User {
         System.out.println("------------------------------------------");
         System.out.println("> 1 : Number of all Volunteers");
         System.out.println("> 2 : Number of Volunteers in each City");
-        System.out.println("> 3 : Total Volunteers's Work Hourse ");
+        System.out.println("> 3 : Total Volunteers's Work Hours ");
         System.out.println("> 4 : Number of Volunteers in each Department "); // Sorting Clothes,Distribution,Marketing and Promotion
         
         int choice = scanner.nextInt();
         
         if(choice == 1){
-            System.out.println("> Number of all Volunteers are :"+ volunteers.size()+1);
+            System.out.println("> Number of all Volunteers are : " + volunteers.size());
                    
         }else if (choice == 2){
             System.out.println("> Number of Volunteers in each City");
             
-            for (int i = 0; i < 10; i++) {
-                // we should change the previous code of cities 
-                //to an array and include 2 columns one for city name , one to the num of volunteers   
+//            for (int i = 0; i < 10; i++) {
+//                // we should change the previous code of cities 
+//                //to an array and include 2 columns one for city name , one to the num of volunteers   
+//            }
+  String[] cities = {"Jeddah", "Mecca", "Yanbu", "Hail", "Dammam", "Riyadh"};
+        int[] CountVolunteerIneachCity = new int[cities.length];
+
+        // Count the number of volunteers in each city
+        for (Volunteer volunteer : volunteers) {
+            String city = volunteer.getCity();
+            for (int i = 0; i < cities.length; i++) {
+                if (city.equalsIgnoreCase(cities[i])) {
+                    CountVolunteerIneachCity[i]++;
+                    break;
+                }
             }
-                
+        }
+        
+         // Display the number of volunteers in each city
+        System.out.println("Number of Volunteers in Each City");
+        for (int i = 0; i < cities.length; i++) {
+            System.out.println(cities[i] + "\t" + CountVolunteerIneachCity[i]);
+        }
+      
         }else if (choice == 3){
                   
             int total= 0;
@@ -108,4 +127,10 @@ public class Manger extends User {
         
     }
     
+    
 }
+
+       
+    
+    
+

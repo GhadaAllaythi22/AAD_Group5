@@ -152,8 +152,18 @@ public class User {
         for (User user : users) {
             if (user.ID .equals(id) && user.password.equals(password)) {
                 System.out.println("Login successful! Welcome " + user.fname + " " + user.lname);
-                
-                //Submenu for services provided (This modificaation was made in the Sprint3)
+           
+                     String usertype;
+        do {
+            System.out.println("Choose M for Manager or V for Volunteer or E for exit");
+            usertype = scanner.next().toUpperCase();
+            
+            switch (usertype) {
+                   case "M":
+                        Manger.viewStatistics(volunteers);
+                   break;
+                     //Submenu for services provided (This modificaation was made in the Sprint3)
+                    case "V":
                 String choise; 
                 do{
                     System.out.println("choice V for volunteeringRequest or C for CountVolunteerHoursWorking or E for exit the system: ");
@@ -164,7 +174,7 @@ public class User {
                             break;
                         case "C":
                             Volunteer.CountVolunteerHoursWorking( volunteers);
-                            break;
+                            break;   
                         case "E":
                             System.out.println("Logging out, see you later!");
                             return;
@@ -173,16 +183,18 @@ public class User {
                            break; 
                     }
                     }while(!choise.equalsIgnoreCase("E"));
+                        
+                        
+                         }
+                   } while (!usertype.equalsIgnoreCase("E"));
+        
                 return;
-                
-                
-                
-                
+        
             }
         }
 //        if it is unmatch inputs the system will send a message to the user and try again
         System.out.println("Invalid ID or Password. Please try again.and if you don’t have account please sign up");
-    }
+       } }
      
-    
-}
+      
+
