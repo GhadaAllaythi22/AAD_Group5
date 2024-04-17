@@ -1,14 +1,10 @@
 
-
 import java.util.*;
-
-
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-
 /**
  *
  * @author LENOVO
@@ -26,7 +22,6 @@ public class Manger extends User {
         this.numberOfVoluntters = 0;
         this.numberOfDonors = 0;
         this.activityStatistics = new String[0]; //  empty array
-        
 
     }
 
@@ -62,75 +57,19 @@ public class Manger extends User {
         this.activityStatistics = activityStatistics;
     }
 
-    
     public static void viewStatistics(ArrayList<Volunteer> volunteers) {
-        
-        Scanner scanner = new Scanner (System.in);
-        
+
+        Statistics statistics = new Statistics();
+
         System.out.println("Statistics:");
-        System.out.println("Please Enter The Number of Statistics Type");
-        System.out.println("------------------------------------------");
-        System.out.println("> 1 : Number of all Volunteers");
-        System.out.println("> 2 : Number of Volunteers in each City");
-        System.out.println("> 3 : Total Volunteers's Work Hours ");
-        System.out.println("> 4 : Number of Volunteers in each Department "); // Sorting Clothes,Distribution,Marketing and Promotion
-        
-        int choice = scanner.nextInt();
-        
-        if(choice == 1){
-            System.out.println("> Number of all Volunteers are : " + volunteers.size());
-                   
-        }else if (choice == 2){
-            System.out.println("> Number of Volunteers in each City");
-            
-//            for (int i = 0; i < 10; i++) {
-//                // we should change the previous code of cities 
-//                //to an array and include 2 columns one for city name , one to the num of volunteers   
-//            }
-  String[] cities = {"Jeddah", "Mecca", "Yanbu", "Hail", "Dammam", "Riyadh"};
-        int[] CountVolunteerIneachCity = new int[cities.length];
 
-        // Count the number of volunteers in each city
-        for (Volunteer volunteer : volunteers) {
-            String city = volunteer.getCity();
-            for (int i = 0; i < cities.length; i++) {
-                if (city.equalsIgnoreCase(cities[i])) {
-                    CountVolunteerIneachCity[i]++;
-                    break;
-                }
-            }
-        }
-        
-         // Display the number of volunteers in each city
-        System.out.println("Number of Volunteers in Each City");
-        for (int i = 0; i < cities.length; i++) {
-            System.out.println(cities[i] + "\t" + CountVolunteerIneachCity[i]);
-        }
-      
-        }else if (choice == 3){
-                  
-            int total= 0;
-            for (int i = 0; i < volunteers.size(); i++) {
-               total+= volunteers.get(i).getWorkhoursnumber();     
-            }
-            
-            System.out.println("> Total Volunteers's Work Hourse are:"+total +"for "+volunteers.size()+"Volunteers");
-            
-        }else if (choice == 4){
-            
-        }else{
-            
-        }
-        
-        
-        
-        
+        System.out.println("> Number of all Volunteers are : " + volunteers.size());
+
+        System.out.println("> Number of Volunteers in each City");
+        statistics.CountVolunteerInCity(volunteers);
+
+        System.out.println("> Total Volunteers's Work Hourse are:" + statistics.getTotalWorkHours());
+
     }
-    
-    
+
 }
-
-       
-    
-    
-
