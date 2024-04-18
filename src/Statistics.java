@@ -2,22 +2,12 @@
 import java.util.ArrayList;
 
 
-
-
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-
-/**
- *
- * @author LENOVO
- */
 public class Statistics {
-    
+    // Statistics-specific variables
+
     private int totalVolunteers;
     private int totalWorkHours;
-
+    // constructers 
     public Statistics() {
     }
 
@@ -26,19 +16,14 @@ public class Statistics {
         this.totalWorkHours = totalWorkHours;
     }
 
-    public int getTotalVolunteers() {
-        return totalVolunteers;
-    }
-
+    
+    // Setters
     public void setTotalVolunteers(int totalVolunteers) {
         this.totalVolunteers = totalVolunteers;
     }
 
-    public int getTotalWorkHours() {
-        return totalWorkHours;
-    }
-
-    public void setTotalWorkHours(ArrayList<Volunteer> volunteers) {
+    
+       public void setTotalWorkHours(ArrayList<Volunteer> volunteers) {
       // this.totalWorkHours = totalWorkHours;
       int total = 0;
         for (int i = 0; i < volunteers.size(); i++) {
@@ -47,7 +32,24 @@ public class Statistics {
 
       totalWorkHours = total;      
     }
-    
+    //  Getters
+      public int getTotalVolunteers() {
+        return totalVolunteers;
+    }
+      
+    public int getTotalWorkHours() {
+        return totalWorkHours;
+    }
+
+ 
+   /* sprint 4: CountVolunteerInCity method: this method will count how many volunteer is volunteered in each city 
+    firt in will take volunteers variable from array list. after that we add array of cities provided in the company 
+    and array to count the numbers saved for each city. the core of the method is the calculating part which is 
+    for loop takes each volunteer and compare for each city if are equal it will count +1 until 
+    it finish all cities and all volunteers from the saved array list> 
+    finally, it will print each city in the array and numbers of volunteers in this city 
+     
+    */    
     public void CountVolunteerInCity(ArrayList<Volunteer> volunteers) {
         
         String[] cities = {"Jeddah", "Mecca", "Yanbu", "Hail", "Dammam", "Riyadh"};
@@ -70,6 +72,7 @@ public class Statistics {
             for (int i = 0; i < cities.length; i++) {
                 System.out.println(cities[i] + "\t" + CountVolunteerIneachCity[i]);
             }
+            
         
     }
     

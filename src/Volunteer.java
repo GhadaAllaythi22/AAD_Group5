@@ -9,7 +9,7 @@ public class Volunteer extends User {
     private String city;
 
 
-        // Constructor from User class inheriited and volunteer variables 
+// Constructor from User class inheriited and volunteer variables 
     public Volunteer(String fname, String lname,String gender, String id, String password, String location, String phoneNumber, String email, String typeofvolunteer, String date, int workhoursnumber, String City) {
         super(fname, lname,gender, id, password, location, phoneNumber, email);
         this.typeofvolunteer = typeofvolunteer;
@@ -97,10 +97,10 @@ public class Volunteer extends User {
         //   -------------------- End of 1st method volunteeringRequest  ------------------------
         
         //Sprint 3
-        //           --------------------implements 2st method Count Volunteer Hours Working ------------------------
-        /*Count Volunteer Hours Working method: After validating of login, the system will be asked to choose one of the services or to exit the system, when the user selecting the Count Volunteer Hours Working service 
+    //           --------------------implements 2nd method Count Volunteer Hours Working ------------------------
+        /* Count Volunteer Hours Working method: After validating of login, the system will be asked to choose one of the services or to exit the system, when the user selecting the Count Volunteer Hours Working service 
          the method will gather all volunteer hours work from the array list of volunteers, then match each work hours with associated ID for the volunteer, then calculate and display the total work hours for the volunteer.
-                 */
+        */
         public static void CountVolunteerHoursWorking(ArrayList<Volunteer> volunteers){
              
             
@@ -131,11 +131,8 @@ public class Volunteer extends User {
             else { // if he/she chooses no (in case the user get here by mistake..
                 System.out.println("OK, see u later!");
             }
-            
-            
-            
-       
-   } //   -------------------- End of 2st method Count Volunteer Hours Working ------------------------
+
+   } //   -------------------- End of 2nd method Count Volunteer Hours Working ------------------------
   
     
 }

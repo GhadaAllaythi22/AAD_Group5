@@ -153,22 +153,12 @@ public class User {
             if (user.ID .equals(id) && user.password.equals(password)) {
                 System.out.println("Login successful! Welcome " + user.fname + " " + user.lname);
            
-                     String usertype;
-        do {
-            System.out.println("Choose M for Manager or V for Volunteer or E for exit");
-            usertype = scanner.next().toUpperCase();
-            
-            switch (usertype) {
-                   case "M":
-                        Manger.viewStatistics(volunteers);
-                   break;
-                     //Submenu for services provided (This modificaation was made in the Sprint3)
-                    case "V":
-                String choise; 
+        
+                String choice; 
                 do{
                     System.out.println("choice V for volunteeringRequest or C for CountVolunteerHoursWorking or E for exit the system: ");
-                    choise = scanner.next(); // to enter the person choise 
-                    switch(choise.toUpperCase()){
+                    choice = scanner.next(); // to enter the person choise 
+                    switch(choice.toUpperCase()){
                         case "V":
                             Volunteer.volunteeringRequest( volunteers, id, password);
                             break;
@@ -182,11 +172,7 @@ public class User {
                            System.out.println("Invalid choice, please try again.");
                            break; 
                     }
-                    }while(!choise.equalsIgnoreCase("E"));
-                        
-                        
-                         }
-                   } while (!usertype.equalsIgnoreCase("E"));
+                    }while(!choice.equalsIgnoreCase("E"));
         
                 return;
         
