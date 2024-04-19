@@ -31,21 +31,21 @@ public class main {
         }
         else if(choice.equalsIgnoreCase("L")){
             user.login(Users,volunteers );   
-           
-        }
-        else
-            System.out.println("please try again");
+
+          
+        }else{
+            System.out.println("please try again"); }
         }while(!choice.equalsIgnoreCase("E"));
         
 //           --------------------implements 3rd method Count Volunteer In City ------------------------
 
             /* after the volunteer user exiting the it will call the count volunteer in each city method 
                and display all volunteers for each city 
-            */
+            */ // we do not need it any more it will appear in manager new method 
             // Create an object of the Statistics class
-            Statistics statistics = new Statistics();
+//            Statistics statistics = new Statistics();
             // to print the statistics it should Call the CountVolunteerInCity method from statistics object 
-            statistics.CountVolunteerInCity(volunteers);       
+//            statistics.CountVolunteerInCity(volunteers);       
 
     }
     

@@ -134,6 +134,7 @@ public class User {
          System.out.println("User added successfully!");
 }
      
+   
      // log in method needed to make the existing user put his\her ID&password to access the system
      
       public void login(ArrayList<User> users , ArrayList<Volunteer> volunteers) {
@@ -153,7 +154,6 @@ public class User {
             if (user.ID .equals(id) && user.password.equals(password)) {
                 System.out.println("Login successful! Welcome " + user.fname + " " + user.lname);
            
-        
                 String choice; 
                 do{
                     System.out.println("choice V for volunteeringRequest or C for CountVolunteerHoursWorking or E for exit the system: ");
@@ -167,20 +167,40 @@ public class User {
                             break;   
                         case "E":
                             System.out.println("Logging out, see you later!");
-                            return;
+                            break;
                         default:
                            System.out.println("Invalid choice, please try again.");
                            break; 
                     }
-                    }while(!choice.equalsIgnoreCase("E"));
+                    }while(!choice.equalsIgnoreCase("E"));                
+            
         
-                return;
-        
-            }
-        }
 //        if it is unmatch inputs the system will send a message to the user and try again
-        System.out.println("Invalid ID or Password. Please try again.and if you don’t have account please sign up");
+        }else {
+                System.out.println("Invalid ID or Password. Please try again.and if you don’t have account please sign up");
+                }
        } }
-     
+      
+    
+      public void managerLogin( ArrayList<Volunteer> volunteers) {
+              Scanner scanner = new Scanner(System.in);
+    
+              System.out.print("Enter your ID: ");
+              String id = scanner.nextLine();
+    
+              System.out.print("Enter your password: ");
+              String password = scanner.nextLine();
+    
+              System.out.println("Login successful! Welcome Manager ");
+              System.out.print("Do you want view statistics for volunteers? (Yes/No): ");
+                        String statistics = scanner.next();
+                        if (statistics.equalsIgnoreCase("Yes")){
+                        Manger.viewStatistics(volunteers);
+                      }else
+                           return;                               }
+}
+
+      
+
       
 

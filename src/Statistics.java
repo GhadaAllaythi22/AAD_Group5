@@ -21,8 +21,8 @@ public class Statistics {
     public void setTotalVolunteers(int totalVolunteers) {
         this.totalVolunteers = totalVolunteers;
     }
-
-    
+       
+       
        public void setTotalWorkHours(ArrayList<Volunteer> volunteers) {
       // this.totalWorkHours = totalWorkHours;
       int total = 0;
@@ -32,6 +32,8 @@ public class Statistics {
 
       totalWorkHours = total;      
     }
+       
+
     //  Getters
       public int getTotalVolunteers() {
         return totalVolunteers;
@@ -68,7 +70,6 @@ public class Statistics {
             }
 
             // Display the number of volunteers in each city
-            
             for (int i = 0; i < cities.length; i++) {
                 System.out.println(cities[i] + "\t" + CountVolunteerIneachCity[i]);
             }
