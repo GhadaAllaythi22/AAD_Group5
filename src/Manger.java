@@ -1,12 +1,15 @@
 
 import java.util.*;
+import java.util.Date;
+import java.text.SimpleDateFormat;
+
 
 public class Manger extends User {
 
 
 
     
-
+    static Date currentDate;
     private String reportID;
     private int numberOfVoluntters;  
     private int numberOfDonors;
@@ -18,6 +21,7 @@ public class Manger extends User {
         this.numberOfVoluntters = 0;
         this.numberOfDonors = 0;
         this.activityStatistics = new String[0]; //  empty array
+        currentDate = new Date();
 
     }
     
@@ -64,6 +68,10 @@ public class Manger extends User {
     static void viewStatistics(ArrayList<Volunteer> volunteers) {
         Statistics statistics = new Statistics();
 
+        // date of the statustcs print
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd MMMM yyyy");
+        System.out.println("Date: " + dateFormat.format(currentDate));
+        System.out.println("");
         System.out.println("-------------------- Statistics -----------------");
 
         System.out.println("> Number of all Volunteers are : " + volunteers.size());
