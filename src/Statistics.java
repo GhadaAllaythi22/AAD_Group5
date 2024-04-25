@@ -26,10 +26,13 @@ public class Statistics {
         int total = 0;
         for (int i = 0; i < volunteers.size(); i++) {
             total += volunteers.get(i).getWorkhoursnumber();
+                    
+   
         }
-
-        totalWorkHours = total;
+             totalWorkHours = total;
     }
+    
+
 
     //  Getters
     public int getTotalVolunteers() {

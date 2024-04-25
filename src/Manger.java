@@ -43,6 +43,11 @@ public class Manger extends User {
       public void setActivityStatistics(String[] activityStatistics) {
         this.activityStatistics = activityStatistics;
     }
+
+    public static void setCurrentDate(Date currentDate) {
+        Manger.currentDate = currentDate;
+    }
+      
       
 //      getters 
 
@@ -62,18 +67,30 @@ public class Manger extends User {
     public String[] getActivityStatistics() {
         return activityStatistics;
     }
+
+    public static Date getCurrentDate() {
+        return new Date();
+    }
     
-    // sprint 5: viewStatistics method:
+  
+
+
+    // sprint 5: viewStatistics method: this method will display the statistics for the volunteers and print it to the manager  
 
     static void viewStatistics(ArrayList<Volunteer> volunteers) {
         Statistics statistics = new Statistics();
 
-        // date of the statustcs print
+        
+          Date currentDate = getCurrentDate();     // Get the current date
+              // Check if currentDate is not null
+        if (currentDate!= null) {    // date of the statustcs print
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd MMMM yyyy");
-        System.out.println("Date: " + dateFormat.format(currentDate));
+        System.out.println("\n Date: " + dateFormat.format(currentDate));
+        } else {         // Print an error message if currentDate is null
+        System.out.println("Error: currentDate is null");
+                 }
         System.out.println("");
         System.out.println("-------------------- Statistics -----------------");
-
         System.out.println("> Number of all Volunteers are : " + volunteers.size());
         System.out.println("-------------------------------------");
         System.out.println("> Number of Volunteers in each City");

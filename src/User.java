@@ -181,7 +181,8 @@ public class User {
                 }
        } }
       
-    
+      /* this method is made for managers login and do not needed to sign up their ID and password provided by
+      the company and it will show for the manager if he wants to see the statistics of volunteers  */
       public void managerLogin( ArrayList<Volunteer> volunteers) {
               Scanner scanner = new Scanner(System.in);
     

@@ -4,7 +4,6 @@ import java.util.*;
 
 public class main {
 //   create Scanner to make users can enter their inputs 
-
     static Scanner scanner = new Scanner(System.in);
 //  create array list for new users and volunteers 
     static ArrayList<User> Users = new ArrayList<>();
@@ -29,7 +28,7 @@ public class main {
             choice = scanner.next();
             if (choice.equalsIgnoreCase("S")) {
                 user.signUp(Users);
-            } else if (choice.equalsIgnoreCase("L")) {
+            } else if (choice.equalsIgnoreCase("L")) { // user choose if he volunteer or manager to login 
                 System.out.print("Are you a Manager or a Volunteer? (M/V): ");
                 String usertype = scanner.next();              
                
@@ -37,6 +36,7 @@ public class main {
                 // then can show the statistcs 
                 switch (usertype.toUpperCase()) {
                     case "M":
+                        // the manager has valid ID & password is given from the company and does not needed to varify
                         user.managerLogin(volunteers);
                         break;
                     case "V":
