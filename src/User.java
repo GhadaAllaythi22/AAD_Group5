@@ -17,6 +17,9 @@ public class User {
 
     public User() {
     }
+    public User(String ID) {
+        this.ID = ID;
+    }
     
 // constructer
     
@@ -163,8 +166,21 @@ public class User {
                             Volunteer.volunteeringRequest( volunteers, id, password);
                             break;
                         case "C":
-                            Volunteer.CountVolunteerHoursWorking( volunteers);
+                            
+                            System.out.println("Do you want to count your hours volunteering work? (Yes/No):");
+                            String chosice = scanner.next();
+                            if(chosice.equalsIgnoreCase("YES")){
+                            System.out.println("Enter your ID please: ");
+                             String idC =scanner.next();
+                            int resulte =Volunteer.CountVolunteerHoursWorking(idC, volunteers);
+                            System.out.println("Your Total Hour Work is : "+resulte); //Display the Cuurent Hour Work for the user. 
+
+                            }
+                            else { // if he/she chooses no (in case the user get here by mistake..
+                            System.out.println("OK, see u later!");
+            }
                             break;   
+                            
                         case "E":
                             System.out.println("Logging out, see you later!");
                             break;
