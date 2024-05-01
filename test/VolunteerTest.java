@@ -40,6 +40,7 @@ public class VolunteerTest {
         volunteersT.add(new Volunteer("Bayan", "Alharbi", "Female","1", "12", "Jeddah", "050", "balharbi0398@stu.kau.edu.sa", "Environmental conservation", "15/10/2024", "30", "Jeddah"));
         volunteersT.add(new Volunteer("Bayan", "Alharbi", "Female","1", "12", "Jeddah", "050", "balharbi0398@stu.kau.edu.sa", "Environmental conservation", "15/10/2024", "13", "Jeddah")); //same person with new workhoursnumber
         volunteersT.add(new Volunteer("Hanin", "Aldosari", "Female","12", "123", "Jeddah", "050", "Hanin@stu.kau.edu.sa", "Environmental", "15/10/2024", "25", "Jeddah"));
+        volunteersT.add(new Volunteer("Hadeel", "Alweldi", "Female","2", "h12345", "Jeddah", "051", "hadeel@gmail.com", "Medical", "1/5/2024", "22", "Jeddah"));
 
         
     }
@@ -149,13 +150,10 @@ public class VolunteerTest {
     @Test
     public void testVolunteeringRequest() {
         System.out.println("volunteeringRequest");
-       ArrayList<Volunteer> volunteers = new ArrayList<>();
-       volunteers.add(new Volunteer("Hadeel", "Alweldi", "Female","2", "H12345", "Jeddah", "051", "hadeel@gmail.com", "Medical", "1/5/2024", "22", "Jeddah"));
-       
        String []input ={"Yes","Medical","22","1/5/2024","Jeddah"};
        
-        assertEquals(1, volunteers.size());
-        Volunteer volunteer = volunteers.get(0);
+        assertEquals(4, volunteersT.size());
+        Volunteer volunteer = volunteersT.get(3);
         assertEquals(input[1], volunteer.getTypeofvolunteer());
         assertEquals(input[2], volunteer.getWorkhoursnumber());
         assertEquals(input[3], volunteer.getDate());
