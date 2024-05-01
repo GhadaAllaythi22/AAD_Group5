@@ -23,6 +23,10 @@ public class Volunteer extends User {
         super( ID);
         this.workhoursnumber = workhoursnumber;
     }
+
+    Volunteer(String maha, String ali, String jeddah) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     
 //    Setters
