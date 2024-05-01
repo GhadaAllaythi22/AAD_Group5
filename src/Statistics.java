@@ -25,7 +25,7 @@ public class Statistics {
         this.totalWorkHours = totalWorkHours;
         int total = 0;
         for (int i = 0; i < volunteers.size(); i++) {
-            total += volunteers.get(i).getWorkhoursnumber();
+            total += Integer.valueOf(volunteers.get(i).getWorkhoursnumber());
                     
    
         }

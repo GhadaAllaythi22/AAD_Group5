@@ -103,8 +103,8 @@ public class StatisticsTest {
         ByteArrayOutputStream out = new ByteArrayOutputStream();
         System.setOut(new PrintStream(out));
         
-        Volunteer v1=new Volunteer("Maha", "Ali","F", "1", "1", "11", "05", "mm", "donor", "1", 3, "Jeddah");
-        Volunteer v2=new Volunteer("Maya", "Ali","F", "1", "1", "11", "05", "mm", "donor", "1", 3, "Jeddah");
+        Volunteer v1=new Volunteer("Maha", "Ali","F", "1", "1", "11", "05", "mm", "donor", "1", "3", "Jeddah");
+        Volunteer v2=new Volunteer("Maya", "Ali","F", "1", "1", "11", "05", "mm", "donor", "1", "3", "Jeddah");
         
         ArrayList<Volunteer> volunteers = new ArrayList<>();
         volunteers.add(v1);

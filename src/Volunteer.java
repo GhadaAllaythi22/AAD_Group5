@@ -5,12 +5,12 @@ public class Volunteer extends User {
 // volunteer-specific variables
      private String typeofvolunteer;
      private String date;
-     private int workhoursnumber;
+     private String workhoursnumber;
     private String city;
 
 
 // Constructor from User class inheriited and volunteer variables 
-    public Volunteer(String fname, String lname,String gender, String id, String password, String location, String phoneNumber, String email, String typeofvolunteer, String date, int workhoursnumber, String City) {
+    public Volunteer(String fname, String lname,String gender, String id, String password, String location, String phoneNumber, String email, String typeofvolunteer, String date, String workhoursnumber, String City) {
         super(fname, lname,gender, id, password, location, phoneNumber, email);
         this.typeofvolunteer = typeofvolunteer;
         this.date = date;
@@ -19,7 +19,7 @@ public class Volunteer extends User {
     }
     //new constrctor added by bayan
 
-    public Volunteer( String ID,int workhoursnumber) {
+    public Volunteer( String ID,String workhoursnumber) {
         super( ID);
         this.workhoursnumber = workhoursnumber;
     }
@@ -39,7 +39,7 @@ public class Volunteer extends User {
         this.date = date;
     }
 
-    public void setWorkhoursnumber(int workhoursnumber) {
+    public void setWorkhoursnumber(String workhoursnumber) {
         this.workhoursnumber = workhoursnumber;
     }
     
@@ -52,7 +52,7 @@ public class Volunteer extends User {
         return date;
     }
 
-    public int getWorkhoursnumber() {
+    public String getWorkhoursnumber() {
         return workhoursnumber;
     }
 
@@ -79,7 +79,7 @@ public class Volunteer extends User {
          String type = scanner.next();
 
          System.out.print("Enter the work hours: ");
-         int workhours = scanner.nextInt();
+         String workhours = scanner.next();
 
          System.out.print("Enter the date: ");
          String date = scanner.next();
@@ -119,7 +119,7 @@ public class Volunteer extends User {
                 //loop and check the volunteer id to in Volunteer arrayList to get his/her total hour work.
                 for (Volunteer volunteer : volunteers) { 
                     if(volunteer.getID().equalsIgnoreCase(id)){
-                      CuurentHourWork += volunteer.getWorkhoursnumber(); // get the current hour work snd then incemnt it to the var CuurentHourWork
+                      CuurentHourWork += Integer.valueOf(volunteer.getWorkhoursnumber());// get the current hour work snd then incemnt it to the var CuurentHourWork
                       
                     }
                 }
