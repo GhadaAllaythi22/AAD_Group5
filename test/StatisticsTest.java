@@ -112,7 +112,7 @@ public class StatisticsTest {
         
         instance.CountVolunteerInCity(volunteers);
         
-        String expectedResult = ("Jeddah" + "\t" + "2");
+        String expectedResult = ("Jeddah" + "\t" + "2"+System.lineSeparator()+"Mecca" + "\t" + "0"+System.lineSeparator()+"Yanbu" + "\t" + "0"+System.lineSeparator()+"Hail" + "\t" + "0"+System.lineSeparator()+"Dammam" + "\t" + "0"+System.lineSeparator()+"Riyadh" + "\t" + "0"+System.lineSeparator());
         assertEquals(expectedResult, out.toString());
                 
         
