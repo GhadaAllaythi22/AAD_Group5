@@ -49,104 +49,110 @@ public class VolunteerTest {
     public void tearDown() {
     }
 
-    /**
-     * Test of setTypeofvolunteer method, of class Volunteer.
-     */
-    @Test
-    public void testSetTypeofvolunteer() {
-        System.out.println("setTypeofvolunteer");
-        String typeofvolunteer = "";
-        Volunteer instance = null;
-        instance.setTypeofvolunteer(typeofvolunteer);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
+//    /**
+//     * Test of setTypeofvolunteer method, of class Volunteer.
+//     */
+//    @Test
+//    public void testSetTypeofvolunteer() {
+//        System.out.println("setTypeofvolunteer");
+//        String typeofvolunteer = "";
+//        Volunteer instance = null;
+//        instance.setTypeofvolunteer(typeofvolunteer);
+//        // TODO review the generated test code and remove the default call to fail.
+//        fail("The test case is a prototype.");
+//    }
 
-    /**
-     * Test of setDate method, of class Volunteer.
-     */
-    @Test
-    public void testSetDate() {
-        System.out.println("setDate");
-        String date = "";
-        Volunteer instance = null;
-        instance.setDate(date);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
+//    /**
+//     * Test of setDate method, of class Volunteer.
+//     */
+//    @Test
+//    public void testSetDate() {
+//        System.out.println("setDate");
+//        String date = "";
+//        Volunteer instance = null;
+//        instance.setDate(date);
+//        // TODO review the generated test code and remove the default call to fail.
+//        fail("The test case is a prototype.");
+//    }
 
     /**
      * Test of setWorkhoursnumber method, of class Volunteer.
      */
-    @Test
-    public void testSetWorkhoursnumber() {
-        System.out.println("setWorkhoursnumber");
-        String workhoursnumber ="0";
-        Volunteer instance = null;
-        instance.setWorkhoursnumber(workhoursnumber);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
+//    @Test
+//    public void testSetWorkhoursnumber() {
+//        System.out.println("setWorkhoursnumber");
+//        String workhoursnumber ="0";
+//        Volunteer instance = null;
+//        instance.setWorkhoursnumber(workhoursnumber);
+//        // TODO review the generated test code and remove the default call to fail.
+//        fail("The test case is a prototype.");
+//    }
 
     /**
      * Test of getTypeofvolunteer method, of class Volunteer.
      */
-    @Test
-    public void testGetTypeofvolunteer() {
-        System.out.println("getTypeofvolunteer");
-        Volunteer instance = null;
-        String expResult = "";
-        String result = instance.getTypeofvolunteer();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
+//    @Test
+//    public void testGetTypeofvolunteer() {
+//        System.out.println("getTypeofvolunteer");
+//        Volunteer instance = null;
+//        String expResult = "";
+//        String result = instance.getTypeofvolunteer();
+//        assertEquals(expResult, result);
+//        // TODO review the generated test code and remove the default call to fail.
+//        fail("The test case is a prototype.");
+//    }
 
     /**
      * Test of getDate method, of class Volunteer.
      */
-    @Test
-    public void testGetDate() {
-        System.out.println("getDate");
-        Volunteer instance = null;
-        String expResult = "";
-        String result = instance.getDate();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
+//    @Test
+//    public void testGetDate() {
+//        System.out.println("getDate");
+//        Volunteer instance = null;
+//        String expResult = "";
+//        String result = instance.getDate();
+//        assertEquals(expResult, result);
+//        // TODO review the generated test code and remove the default call to fail.
+//        fail("The test case is a prototype.");
+//    }
 
     /**
      * Test of getWorkhoursnumber method, of class Volunteer.
      */
-    @Test
-    public void testGetWorkhoursnumber() {
-        System.out.println("getWorkhoursnumber");
-        Volunteer instance = null;
-        String expResult = "0";
-        String result = instance.getWorkhoursnumber();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
+//    @Test
+//    public void testGetWorkhoursnumber() {
+//        System.out.println("getWorkhoursnumber");
+//        Volunteer instance = null;
+//        String expResult = "0";
+//        String result = instance.getWorkhoursnumber();
+//        assertEquals(expResult, result);
+//        // TODO review the generated test code and remove the default call to fail.
+//        fail("The test case is a prototype.");
+//    }
 
     /**
      * Test of getCity method, of class Volunteer.
      */
-    @Test
-    public void testGetCity() {
-        System.out.println("getCity");
-        Volunteer instance = null;
-        String expResult = "";
-        String result = instance.getCity();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
+//    @Test
+//    public void testGetCity() {
+//        System.out.println("getCity");
+//        Volunteer instance = null;
+//        String expResult = "";
+//        String result = instance.getCity();
+//        assertEquals(expResult, result);
+//        // TODO review the generated test code and remove the default call to fail.
+//        fail("The test case is a prototype.");
+//    }
 
     /**
      * Test of volunteeringRequest method, of class Volunteer.
      */
+/*  in this test method, it verifies the correctness of a volunteering request by checking 
+    the properties of a Volunteer object. first create an input array with sample data, then asserts that
+    the size of the volunteersT list is 4. It then retrieves volunteer from the list and checks that its 
+    typeofvolunteer, workhoursnumber, date, and city fields match the corresponding values in the input array. 
+    This test ensures that the volunteering request is processed and stored in the system.
+    */    
     @Test
     public void testVolunteeringRequest() {
         System.out.println("volunteeringRequest");
@@ -163,6 +169,14 @@ public class VolunteerTest {
     /**
      * Test of CountVolunteerHoursWorking method, of class Volunteer.
      */
+    
+/* in this test method, verifies the correctness which calculates the total number of 
+    hours worked by a volunteer with a given ID. first create an expected result 
+    based on the test data, then calls the static method CountVolunteerHoursWorking with 
+    the ID and the volunteersT list as arguments. Finally, it asserts that the result 
+    matches the expected result. This test ensures that the CountVolunteerHoursWorking method
+    correctly calculates the total number of hours worked by a volunteer.   
+    */   
     @Test
     public void testCountVolunteerHoursWorking() {
         System.out.println("CountVolunteerHoursWorking");

@@ -42,6 +42,14 @@ public class MangerTest {
     /**
      * Test of viewStatistics method, of class Manger.
      */
+/*  in this test method, it verifies the correctness of the viewStatistics
+    method, which displays the statistics of a list of volunteers. first creates a list 
+    of Volunteer objects with the same city "Jeddah". then sets up an output  then creates a Manger 
+    object and calls the viewStatistics method with the list as an argument.
+    Finally, it asserts that the output string matches the expected string, which
+    contains the statistics of the volunteers. This test ensures that the viewStatistics method correctly 
+    displays the statistics of the volunteers based on the given data."
+ */    
     @Test
     public void testViewStatistics() {
          // إعداد البيانات الثابتة للاختبار
