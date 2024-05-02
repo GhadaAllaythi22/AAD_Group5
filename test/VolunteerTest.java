@@ -17,7 +17,7 @@ import static org.junit.Assert.*;
  * @author user
  */
 public class VolunteerTest {
-    
+    // create volunteersT variable an ArrayList of Volunteer objects
     public ArrayList<Volunteer> volunteersT;
     
     public VolunteerTest() {

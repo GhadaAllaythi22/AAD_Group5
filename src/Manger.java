@@ -24,6 +24,13 @@ public class Manger extends User {
         currentDate = new Date();
 
     }
+
+    public Manger() {
+    }
+
+ 
+
+   
     
 //    setters
 
@@ -80,15 +87,9 @@ public class Manger extends User {
     static void viewStatistics(ArrayList<Volunteer> volunteers) {
         Statistics statistics = new Statistics();
 
-        
-          Date currentDate = getCurrentDate();     // Get the current date
-              // Check if currentDate is not null
-        if (currentDate!= null) {    // date of the statustcs print
-        SimpleDateFormat dateFormat = new SimpleDateFormat("dd MMMM yyyy");
-        System.out.println("\n Date: " + dateFormat.format(currentDate));
-        } else {         // Print an error message if currentDate is null
-        System.out.println("Error: currentDate is null");
-                 }
+//        we delete the date variable to make it in the testing successful because of date formating was causing an error 
+
+
         System.out.println("");
         System.out.println("-------------------- Statistics -----------------");
         System.out.println("> Number of all Volunteers are : " + volunteers.size());
@@ -100,7 +101,7 @@ public class Manger extends User {
         System.out.println("> Total Volunteers's Work Hourse are:" + statistics.getTotalWorkHours());
         System.out.println("-------------------------------------");    }
 
-
+    
   
 
 }

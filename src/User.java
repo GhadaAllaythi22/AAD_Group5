@@ -212,8 +212,8 @@ public class User {
               System.out.print("Do you want view statistics for volunteers? (Yes/No): ");
                         String statistics = scanner.next();
                         if (statistics.equalsIgnoreCase("Yes")){
-                        Manger.viewStatistics(volunteers);
-                      }else
+                         Manger.viewStatistics(volunteers);   
+                        }else
                            return;                               }
 }
 

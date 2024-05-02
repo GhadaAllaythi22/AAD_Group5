@@ -1,9 +1,11 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/UnitTests/JUnit4TestClass.java to edit this template
  */
 
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import org.junit.After;
@@ -15,7 +17,7 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author DELL
+ * @author LENOVO
  */
 public class MangerTest {
     
@@ -37,149 +39,48 @@ public class MangerTest {
     @After
     public void tearDown() {
     }
-
-    /**
-     * Test of setReportID method, of class Manger.
-     */
-    @Test
-    public void testSetReportID() {
-        System.out.println("setReportID");
-        String reportID = "";
-        Manger instance = null;
-        instance.setReportID(reportID);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of setNumberOfVoluntters method, of class Manger.
-     */
-    @Test
-    public void testSetNumberOfVoluntters() {
-        System.out.println("setNumberOfVoluntters");
-        int numberOfVoluntters = 0;
-        Manger instance = null;
-        instance.setNumberOfVoluntters(numberOfVoluntters);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of setNumberOfDonors method, of class Manger.
-     */
-    @Test
-    public void testSetNumberOfDonors() {
-        System.out.println("setNumberOfDonors");
-        int numberOfDonors = 0;
-        Manger instance = null;
-        instance.setNumberOfDonors(numberOfDonors);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of setActivityStatistics method, of class Manger.
-     */
-    @Test
-    public void testSetActivityStatistics() {
-        System.out.println("setActivityStatistics");
-        String[] activityStatistics = null;
-        Manger instance = null;
-        instance.setActivityStatistics(activityStatistics);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of setCurrentDate method, of class Manger.
-     */
-    @Test
-    public void testSetCurrentDate() {
-        System.out.println("setCurrentDate");
-        Date currentDate = null;
-        Manger.setCurrentDate(currentDate);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of getNumberOfVoluntters method, of class Manger.
-     */
-    @Test
-    public void testGetNumberOfVoluntters() {
-        System.out.println("getNumberOfVoluntters");
-        Manger instance = null;
-        int expResult = 0;
-        int result = instance.getNumberOfVoluntters();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of getReportID method, of class Manger.
-     */
-    @Test
-    public void testGetReportID() {
-        System.out.println("getReportID");
-        Manger instance = null;
-        String expResult = "";
-        String result = instance.getReportID();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of getNumberOfDonors method, of class Manger.
-     */
-    @Test
-    public void testGetNumberOfDonors() {
-        System.out.println("getNumberOfDonors");
-        Manger instance = null;
-        int expResult = 0;
-        int result = instance.getNumberOfDonors();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of getActivityStatistics method, of class Manger.
-     */
-    @Test
-    public void testGetActivityStatistics() {
-        System.out.println("getActivityStatistics");
-        Manger instance = null;
-        String[] expResult = null;
-        String[] result = instance.getActivityStatistics();
-        assertArrayEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of getCurrentDate method, of class Manger.
-     */
-    @Test
-    public void testGetCurrentDate() {
-        System.out.println("getCurrentDate");
-        Date expResult = null;
-        Date result = Manger.getCurrentDate();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
     /**
      * Test of viewStatistics method, of class Manger.
      */
     @Test
     public void testViewStatistics() {
-        System.out.println("viewStatistics");
-        ArrayList<Volunteer> volunteers = null;
-        Manger.viewStatistics(volunteers);
-        assertNotNull(this);
-    }
+         // إعداد البيانات الثابتة للاختبار
+        ArrayList<Volunteer> volunteers = new ArrayList<>();
+        volunteers.add(new Volunteer("Maha", "Ali","F", "1", "1", "11", "05", "mm", "donor", "1", "3", "Jeddah"));
+        volunteers.add(new Volunteer("Halah", "Hamdi","F", "1", "1", "11", "05", "mm", "donor", "1", "3", "Jeddah"));
+        volunteers.add(new Volunteer("Alaa", "Ahamed","F", "1", "1", "11", "05", "mm", "donor", "1", "3", "Jeddah"));
+
+        // تحويل الإخراج من الكونسول إلى ByteArrayOutputStream
+        ByteArrayOutputStream out = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(out));
+
+        // إعداد الميثود التي سنختبرها
+        
+        Manger instance = new Manger();
+        instance.viewStatistics(volunteers);
+   
+ 
+        // التحقق من النتائج المتوقعة
+        String expectedOutput =   System.lineSeparator() +
+                "-------------------- Statistics -----------------" + System.lineSeparator() +
+                "> Number of all Volunteers are : 3" + System.lineSeparator() +
+                "-------------------------------------" + System.lineSeparator() +
+                "> Number of Volunteers in each City" + System.lineSeparator() +
+                "Jeddah"+"\t"+"3" + System.lineSeparator() +
+                "Mecca"+"\t"+"0" + System.lineSeparator() +
+                "Yanbu"+"\t"+"0" + System.lineSeparator() +
+                "Hail"+"\t"+"0" + System.lineSeparator() +
+                "Dammam"+"\t"+"0" + System.lineSeparator() +
+                "Riyadh"+"\t"+"0" + System.lineSeparator() +
+                "-------------------------------------" + System.lineSeparator() +
+                "> Total Volunteers's Work Hourse are:9" + System.lineSeparator() +
+                "-------------------------------------" + System.lineSeparator();
+
+        assertEquals(expectedOutput,out.toString());
+        
+        
+    }   
     
 }
+
+
